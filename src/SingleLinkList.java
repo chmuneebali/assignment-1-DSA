@@ -35,20 +35,20 @@ public class SingleLinkList  {
         Node newNode = new Node(data);
         if (head == null) {
             System.out.println("LL is empty Inserting at the front of the Linked List");
-            newNode.next = head;
-            newNode = head;
+            head = newNode;
             return;
         }
         Node currNode = head;
         int currPostion = 0; 
-        while ( currNode != null && currPostion < postion) {
+        while ( currNode != null && currPostion < postion-1) {
             currNode = currNode.next;
             currPostion++;
         }
         if (currNode == null) {
             System.out.println("The LL is not long enough");
+            return;
         }
-        newNode.next = currNode;
+        newNode.next = currNode.next;
         currNode.next = newNode;
         System.out.println(data + " Inserted at the postion " + postion +"\n");
     }
@@ -104,13 +104,25 @@ public class SingleLinkList  {
         Node currNode = head;
         Node prevNode = null;
         int currPostion = 0;
-        while (currNode != null &&  postion > currPostion) {
+        while (currNode != null &&  currPostion < postion) {
             prevNode = currNode;
             currNode = currNode.next;
             currPostion++;
         }
-        prevNode.next = currNode.next;
-        currNode.next = null;
-        System.out.println("Deleted Node at "+postion+ "\t" + currNode.data);
+        if (currNode == null) {
+            System.out.println("the node is not found at : " + postion);
+            return;
+        }
+        if (prevNode == null) {
+            head = currNode.next;
+            return;
+        } else {
+            prevNode.next = currNode.next;
+            currNode.next = null;    
+        }
+        
+        System.out.println("Deleted Node at position : "+postion+ "Node :" + currNode.data);
     }
+
+    
 }

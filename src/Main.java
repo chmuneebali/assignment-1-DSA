@@ -19,6 +19,12 @@ public static void main(String[] args) throws Exception {
         list.print();
         list.deleteFirst();
         list.print();
+        list.deleteLast();
+        list.print();
+        System.out.println("Enter position to delete the node");
+        int dPosition = scanner.nextInt();
+        scanner.nextLine();
+        list.deleteRandom(postion);
     }
 
 }
