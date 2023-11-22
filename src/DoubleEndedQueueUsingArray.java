@@ -79,22 +79,4 @@ public class DoubleEndedQueueUsingArray {
             System.out.println();
         }
     }
-    
-    public class Main {
-        public static void main(String[] args) {
-            Deque deque = new Deque(5);
-    
-            deque.enqueueRear(1);
-            deque.enqueueRear(2);
-            deque.enqueueRear(3);
-    
-            deque.print();
-    
-            deque.enqueueFront(4);
-            deque.dequeueRear();
-    
-            deque.print();
-        }
-    }
-    
-}
+
