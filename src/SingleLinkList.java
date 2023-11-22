@@ -124,5 +124,21 @@ public class SingleLinkList  {
         System.out.println("Deleted Node at position : "+postion+ "Node :" + currNode.data);
     }
 
-    
+    public void search(String value) {
+        if (head == null) {
+            System.out.println("the LL is empty");
+            return;
+        }
+        Node current = head;
+        int position;
+        while (current != null) {
+            if (current.data == value) {
+                position++;
+                System.out.println("the data  si fond at teh postin: "+ position); 
+            
+            }
+            current = current.next;
+        }
+     System.out.println('data iss not  found inhte LL');
+    }
 }
